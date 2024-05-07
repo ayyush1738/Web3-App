@@ -6,7 +6,7 @@ import searchImg from "./images/search-icon-png-5.png";
 export default function Navbar() {
   return (
     <>
-      <div className="navbar bg-purple-900 h-20 flex justify-between">
+      <div className="navbar bg-purple-800 h-20 flex justify-between">
         <div className="heading">
           <section className="text-purple-200 p-6 text-2xl">MetaRealms</section>
         </div>
@@ -16,13 +16,15 @@ export default function Navbar() {
             <img className="h-8 " src={searchImg} alt="" />
           </button>
           <ul className="flex justify-between mt-4">
+            <li><a className="hover:text-white" href="#">DeFi</a></li>
+            <li><a className="hover:text-white" href="#">%Yield</a></li>
             <li><a className="hover:text-white" href="#">Solutions</a></li>
             <li><a className="hover:text-white" href="#">Services</a></li>
             <li><a className="hover:text-white" href="#">Blog</a></li>
             <li><a className="hover:text-white" href="#">Contact Us</a></li>
           </ul>
         </div>
-        <div className="button float-right p-2 m-0 mr-4">
+        <div className="button float-right p-2 mt-2 mr-4">
            <ConnectWallet /> 
         </div>
       </div>
