@@ -24,7 +24,7 @@ export default function Navbar() {
             <li><a className="hover:text-white" href="#">Contact Us</a></li>
           </ul>
         </div>
-        <div className="button float-right p-2 mt-2 mr-4">
+        <div className="button float-right p-2 mr-4">
            <ConnectWallet /> 
         </div>
       </div>
