@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import SelectNetwork from "./components/MetaSwap";
-// import "./styles/Home.css";
 
 
 export default function App() {
