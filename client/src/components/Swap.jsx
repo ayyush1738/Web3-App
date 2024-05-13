@@ -14,6 +14,8 @@ function Swap(props) {
   const [slippage, setSlippage] = useState(2.5);
   const [tokenOneAmount, setTokenOneAmount] = useState(null);
   const [tokenTwoAmount, setTokenTwoAmount] = useState(null);
+  const [tokenOne, setTokenOne] = useState(tokenList[0]);
+  const [tokenTwo, setTokenTwo] = useState(tokenList[1]);
 
   function handleSlippageChange()
   {
@@ -52,8 +54,18 @@ function Swap(props) {
         </Popover>
       </div>
       <div className="inputs">
-        <Input placeholder="0" value={tokenOneAmount} onchange={changeAmount}/>
-        <Input placeholder="0" value={tokenTwoAmount} disabled={true} />
+        <div className="h-28 mt-10 ml-4 rounded-2xl  bg-purple-300 border-none w-11/12 ">
+          <Input placeholder="0" className="text-4xl bg-purple-300 w-1/2 bg-transparent border-none mt-8" value={tokenOneAmount} onchange={changeAmount}/>
+          <div className="w-28 h-10 bg-white rounded-3xl float-right mr-4 mt-9 flex justify-between">
+          <img src={tokenOne.img} alt="assetOneLogo" className="assetLogo h-6 m-auto" />
+            {tokenOne.ticker}
+            <DownOutlined />
+          </div>
+        </div>
+        <div className="h-28 mt-2 ml-4 rounded-2xl  bg-purple-300 border-none w-11/12 ">
+          <Input placeholder="0" className="text-4xl bg-purple-300 w-1/2 bg-transparent border-none mt-8" value={tokenTwoAmount}  />
+          <div className="w-24 h-10 bg-white rounded-3xl float-right mr-4 mt-9"></div>
+        </div>
       </div>
     </div>
     </>
