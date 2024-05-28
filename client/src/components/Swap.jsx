@@ -34,6 +34,21 @@ function Swap(props) {
     setTokenTwo(one);
   }
 
+  function openModal(asset) {
+    setChangeToken(asset);
+    SkeletonImage(true);
+  }
+
+  function modiyToken(i){
+    if(changeToken === 1)
+      {
+        setTokenOne(tokenList[i]);
+      } else{
+        setTokenTwo(tokenList[i]);
+      }
+      setIsOpen(false);
+  }
+
   const settings=(
     <>
     <div>Slippage Tolerance</div>
@@ -49,11 +64,29 @@ function Swap(props) {
 
   return(
     <>
-    <Modal>
+    <Modal
       open={isOpen}
       footer={null}
-      onCancel={() => setIsOpen(false)};
+      onCancel={() => setIsOpen(false)}
       title="Select a token"
+    >
+      <div className="modalContent">
+        {tokenList?.map((e,i)=>{
+          return(
+            <div
+              className="tokenChoice"
+              key={i}
+              onClick={() => modifyToken(i)}
+            >
+              <img src={e.img} alt={e.ticker} className="tokenLogo"/>
+              <div className="tokenChoiceNames">
+                <div className="tokenName">{e.name}</div>
+                <div className="tokenTicker">{e.ticker}</div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </Modal>
     <div className="tradeBox w-96 h-96 m-auto bg-purple-600 rounded-2xl">
       <div className="tradeBoxHeader flex justify-between">
